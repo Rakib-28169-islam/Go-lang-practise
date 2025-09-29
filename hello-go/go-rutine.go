@@ -32,21 +32,21 @@ func printEvenOdd(num int,wg *sync.WaitGroup){
 	}
 	// time.Sleep(1*time.Second)
 } 
-func main(){
-	// printNumbers("Direct")
-    var wg sync.WaitGroup
+// func main(){
+// 	// printNumbers("Direct")
+//     var wg sync.WaitGroup
 	
-	for i:=1;i<=3;i++{
-		wg.Add(3)
-		go printNumbers("Goroutine", &wg)
-		go printMultiplicationTable(i, &wg)
-		go printEvenOdd(i, &wg)
-		wg.Wait()
+// 	for i:=1;i<=3;i++{
+// 		wg.Add(3)
+// 		go printNumbers("Goroutine", &wg)
+// 		go printMultiplicationTable(i, &wg)
+// 		go printEvenOdd(i, &wg)
+// 		wg.Wait()
 		
-	}
+// 	}
   
-	fmt.Print("\n\n")
-	wg.Wait()
+// 	fmt.Print("\n\n")
+// 	wg.Wait()
 
 
-}
+// }
