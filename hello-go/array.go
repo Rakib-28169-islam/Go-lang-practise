@@ -1,6 +1,8 @@
 package main
 
 import "fmt"
+
+type intArr []int
 func arrayFunction(){
 		// Array
 	var arr = [3]int{1, 2, 3}
@@ -76,3 +78,36 @@ func twoDimensionalArray(){
 	}
 }
 
+func (arr intArr) sum()int{
+	sum:=0
+	for _,val:=range arr{
+		sum+=val
+	}
+	return sum
+}
+func (arr *intArr) append(values ...int){
+	*arr = append(*arr,values...)
+}
+func (arr intArr) get(index int)(int,error){
+	if index<0 || index>=len(arr){
+		return 0,fmt.Errorf("array index out of bound")
+	}
+	return arr[index],nil
+}
+func (arr *intArr) pop()(int,error){
+	if len(*arr)==0{
+		return 0,fmt.Errorf("array is empty")
+	}
+	val:=(*arr)[len(*arr)-1]
+	*arr=(*arr)[:len(*arr)-1]
+	return val,nil
+}
+func (arr *intArr) sort(){
+	for i:=0;i<len(*arr)-1;i++{
+		for j:=0;j<len(*arr)-i-1;j++{
+			if (*arr)[j]>(*arr)[j+1]{
+				(*arr)[j],(*arr)[j+1]=(*arr)[j+1],(*arr)[j]
+			}
+		}
+	}
+}
