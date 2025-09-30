@@ -111,3 +111,46 @@ func (arr *intArr) sort(){
 		}
 	}
 }
+
+func testMethodsWithReceiver(){
+	arr := intArr{1, 2, 3, 4, 5,-1,2,6}//intArr is a custom type defined in array.go
+	fmt.Println("Initial Array:", arr)
+	
+	// Using the method to calculate the sum
+	sum := arr.sum()
+	fmt.Println("Sum of elements:", sum)
+
+	// Using the method to append elements
+	arr.append(6, 7, 8)
+	fmt.Println("After appending elements:", arr)
+
+	// Using the method to get an element
+	val, err := arr.get(2)
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		fmt.Println("Element at index 2:", val)
+	}
+
+	// Using the method to pop an element
+	poppedVal, err := arr.pop()
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		fmt.Println("Popped element:", poppedVal)
+		fmt.Println("Array after popping:", arr)
+	}
+	
+	// Using the method to sort the array
+	arr.sort()
+	fmt.Println("Sorted Array:", arr)
+
+
+//expected output:
+
+// 	After appending elements: [1 2 3 4 5 -1 2 6 6 7 8]
+// Element at index 2: 3
+// Popped element: 8
+// Array after popping: [1 2 3 4 5 -1 2 6 6 7]
+// Sorted Array: [-1 1 2 2 3 4 5 6 6 7]
+}
