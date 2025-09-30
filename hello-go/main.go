@@ -1,5 +1,7 @@
 package main
 
 func main() {
-	arrayFunction()
+	// arrayFunction()
+	// twoDimensionalArray()
+	displayStudentGroupWise()
 }

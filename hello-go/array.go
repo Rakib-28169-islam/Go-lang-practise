@@ -60,3 +60,19 @@ func arrayFunction(){
 	fmt.Println("Slice A:",sliceA)
 	fmt.Println("Slice B:",sliceB)
 }
+
+func twoDimensionalArray(){
+
+	matrix := [][]int{
+		{1, 2, 3},
+		{4, 5, 6},
+		{7, 8, 9},
+	}
+	fmt.Println("2D Array (Matrix):")
+	for i,row :=range matrix{
+		for j,val :=range row{
+			fmt.Printf("matrix[%d][%d] = %d\n",i,j,val)
+		}
+	}
+}
+
