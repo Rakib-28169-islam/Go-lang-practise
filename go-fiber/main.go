@@ -18,5 +18,12 @@ func main() {
         })
     })
 
+	app.Put("/api/users/:id",func(c* fiber.Ctx)error{
+		id := c.Params("id")
+		return c.JSON(fiber.Map{
+			"message": "User " + id + " created successfully",
+		})
+	})
+
     log.Fatal(app.Listen(":3000"))
 }
