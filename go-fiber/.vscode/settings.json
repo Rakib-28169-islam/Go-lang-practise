@@ -1,0 +1,7 @@
+{
+    "go.buildTags": "",
+    "go.buildFlags": [],
+    "go.testFlags": [],
+    "go.lintTool": "golangci-lint",
+    "go.formatTool": "gofumpt"
+}
